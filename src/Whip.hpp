@@ -14,11 +14,8 @@ class Whip : public CondimentDecorator {
 public:
 	Whip(Beverage& beverage);
 	virtual ~Whip() = default;
-	virtual std::string getDescription() override;
+	virtual arrayOfStrings getDescription() override;
 	virtual double cost() override;
-
-private:
-	Beverage& beverage;
 };
 
 #endif /* SRC_WHIP_HPP_ */

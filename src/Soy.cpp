@@ -7,11 +7,13 @@
 
 #include "Soy.hpp"
 
-Soy::Soy(Beverage& beverage) : beverage(beverage) {
+Soy::Soy(Beverage& beverage) : CondimentDecorator(beverage) {
 }
 
-std::string Soy::getDescription() {
-	return beverage.getDescription() + ", Soy";
+arrayOfStrings Soy::getDescription() {
+	arrayOfStrings arrs = beverage.getDescription();
+	arrs.push_back("Soy");
+	return arrs;
 }
 
 double Soy::cost() {

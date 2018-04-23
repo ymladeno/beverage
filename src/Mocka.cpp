@@ -7,11 +7,13 @@
 
 #include "Mocka.hpp"
 
-Mocka::Mocka(Beverage& beverage) : beverage(beverage) {
+Mocka::Mocka(Beverage& beverage) : CondimentDecorator(beverage) {
 }
 
-std::string Mocka::getDescription() {
-	return beverage.getDescription() + ", Mocka";
+arrayOfStrings Mocka::getDescription() {
+	arrayOfStrings arrs = beverage.getDescription();
+	arrs.push_back("Mocka");
+	return arrs;
 }
 
 double Mocka::cost() {

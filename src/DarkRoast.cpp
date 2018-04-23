@@ -7,11 +7,10 @@
 
 #include "DarkRoast.hpp"
 
-std::string DarkRoast::getDescription() {
-	return "DarkRoast";
+arrayOfStrings DarkRoast::getDescription() {
+	return arrayOfStrings{"DarkRoast"};
 }
 
 double DarkRoast::cost() {
 	return PRICE;
 }
-

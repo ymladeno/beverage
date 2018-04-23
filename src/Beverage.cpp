@@ -10,10 +10,6 @@
 Beverage::Beverage(Size size) : size(size) {
 }
 
-std::string Beverage::getDescription() {
-	return "Unknown beverage";
-}
-
 void Beverage::setSize(Size size) {
 	this->size = size;
 }

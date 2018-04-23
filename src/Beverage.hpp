@@ -11,6 +11,8 @@
 #include <string>
 #include <vector>
 
+using arrayOfStrings = std::vector<std::string>;
+
 class Beverage {
 public:
 	enum class Size {
@@ -20,10 +22,11 @@ public:
 	};
 	Beverage(Size size = Size::small);
 	virtual ~Beverage() = default;
-	virtual std::string getDescription();
 	virtual void setSize(const Size size);
 	virtual Size getSize() const;
+	virtual arrayOfStrings getDescription() = 0;
 	virtual double cost() = 0;
+
 private:
 	Size size;
 };

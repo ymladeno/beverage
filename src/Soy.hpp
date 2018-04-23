@@ -14,11 +14,8 @@ class Soy : public CondimentDecorator {
 public:
 	Soy(Beverage& beverage);
 	virtual ~Soy() = default;
-	virtual std::string getDescription() override;
+	virtual arrayOfStrings getDescription() override;
 	virtual double cost() override;
-
-private:
-	Beverage& beverage;
 };
 
 #endif /* SRC_SOY_HPP_ */

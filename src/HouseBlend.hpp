@@ -14,7 +14,7 @@ class HouseBlend : public Beverage {
 public:
 	virtual ~HouseBlend() = default;
 	virtual double cost() override;
-	std::string getDescription();
+	arrayOfStrings getDescription() override;
 
 private:
 	static constexpr double PRICE = .89;

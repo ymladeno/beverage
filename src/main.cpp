@@ -6,21 +6,36 @@
  */
 
 #include <iostream>
+#include <cassert>
 #include "DarkRoast.hpp"
 #include "Mocka.hpp"
 #include "Whip.hpp"
+#include "CondimentPrettyPrint.hpp"
+
+std::ostream& operator<<(std::ostream& os, Beverage* pobj) {
+	assert(pobj != nullptr);
+
+	arrayOfStrings arrs = pobj->getDescription();
+
+	for(auto str : arrs) {
+		os << str << ", ";
+	}
+
+	os << " $" << std::to_string(pobj->cost());
+
+	return os;
+}
 
 int main() {
 	Beverage* beverage = new DarkRoast;
-	Beverage* beverage1 = new Mocka(*beverage);
-    beverage1->setSize(Beverage::Size::large);
-    beverage1 = new Mocka(*beverage1);
-    beverage1 = new Whip(*beverage1);
+	beverage = new Mocka(*beverage);
+    beverage->setSize(Beverage::Size::large);
+    beverage = new Mocka(*beverage);
+    beverage = new Whip(*beverage);
+    beverage = new CondimentPrettyPrint(*beverage);
 
-    std::cout << beverage->getDescription() << " = " << beverage->cost() << std::endl;
-    std::cout << beverage1->getDescription() << " = " << beverage1->cost() << std::endl;
+    std::cout << beverage << std::endl;
 
-	delete beverage1;
 	delete beverage;
 	return 0;
 }

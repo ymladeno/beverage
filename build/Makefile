@@ -15,7 +15,7 @@ OBJS		= $(addprefix $(ROOT_DIR)/obj/,$(addsuffix .o,$(basename $(SRCS))))
 
 # Flags
 INCFLAGS	= -I../../inc
-CPPFLAGS	= -std=c++11 -g -Wall -Wextra -pedantic $(INCFLAGS)
+CPPFLAGS	= -std=c++14 -g -Wall -Wextra -pedantic $(INCFLAGS)
 LDFLAGS		=
 LDLIBS		=
 

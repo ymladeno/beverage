@@ -14,11 +14,8 @@ class Mocka : public CondimentDecorator {
 public:
 	Mocka(Beverage& beverage);
 	virtual ~Mocka() = default;
-	virtual std::string getDescription() override;
+	virtual arrayOfStrings getDescription() override;
 	virtual double cost() override;
-
-private:
-	Beverage& beverage;
 };
 
 #endif /* SRC_MOCKA_HPP_ */

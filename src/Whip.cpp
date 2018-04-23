@@ -7,11 +7,13 @@
 
 #include "Whip.hpp"
 
-Whip::Whip(Beverage& beverage) : beverage(beverage) {
+Whip::Whip(Beverage& beverage) : CondimentDecorator(beverage) {
 }
 
-std::string Whip::getDescription() {
-	return beverage.getDescription() + ", Whip";
+arrayOfStrings Whip::getDescription() {
+	arrayOfStrings arrs = beverage.getDescription();
+	arrs.push_back("Whip");
+	return arrs;
 }
 
 double Whip::cost() {

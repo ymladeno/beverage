@@ -12,8 +12,12 @@
 
 class CondimentDecorator : public Beverage {
 public:
+	CondimentDecorator(Beverage& beverage);
 	virtual ~CondimentDecorator() = default;
-	virtual std::string getDescription() = 0;
+	Beverage* getBeverage() const;
+
+protected:
+	Beverage& beverage;
 };
 
 #endif /* SRC_CONDIMENTDECORATOR_HPP_ */

@@ -14,7 +14,7 @@ class DarkRoast : public Beverage {
 public:
 	virtual ~DarkRoast() = default;
 	virtual double cost() override;
-	virtual std::string getDescription() override;
+	virtual arrayOfStrings getDescription() override;
 
 private:
 	static constexpr double PRICE = .99;

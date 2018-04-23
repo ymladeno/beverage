@@ -7,11 +7,10 @@
 
 #include "HouseBlend.hpp"
 
-std::string HouseBlend::getDescription() {
-	return "HouseBlend";
+arrayOfStrings HouseBlend::getDescription() {
+	return arrayOfStrings{"HouseBlend"};
 }
 
 double HouseBlend::cost() {
 	return PRICE;
 }
-
